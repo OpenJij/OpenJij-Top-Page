@@ -1,6 +1,9 @@
 name: OpenJij Top Page
 
 on:
+  push:
+    tags:
+      - 'v*.*.*'
   workflow_dispatch:
   release:
     types: [published]
