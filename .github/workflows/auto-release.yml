@@ -4,7 +4,14 @@ on:
   push:
     branches:
       - main
-
+  schedule:
+    - cron: '00 20 * * 1'
+    - cron: '30 22 * * 2'
+    - cron: '00 00 * * 3'
+    - cron: '30 02 * * 4'
+    - cron: '00 04 * * 5'
+    - cron: '30 06 * * 6'
+    - cron: '00 08 * * 0'
 permissions:
   contents: read
 
@@ -15,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: release-drafter/release-drafter@v5
-        
+        with:
+          publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
