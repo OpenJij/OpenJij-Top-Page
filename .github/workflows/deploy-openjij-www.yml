@@ -2,6 +2,8 @@ name: OpenJij Top Page
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v*.*.*'
   workflow_dispatch:
